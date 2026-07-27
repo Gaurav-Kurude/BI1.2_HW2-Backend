@@ -25,8 +25,10 @@ async function createHotel(newHotel){
 
 app.post("/hotels", async (req, res) =>{
     try{
+        console.log(req.body);
         const savedHotel = await createHotel(req.body);
         res.status(201).json({message: "hotel added successfully", hotel: savedHotel});
+        console.log(savedHotel);
 
     } catch(error){
         res.status(500).json({error: "Failed to fetch hotel"});
