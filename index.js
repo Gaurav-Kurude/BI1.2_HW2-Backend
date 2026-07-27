@@ -233,7 +233,7 @@ app.post("/hotels/:hotelId", async (req, res) =>{
     }
 })
 
-const PORT = 5000
+const PORT = 8000
 async function startServer() {
   try {
     await initializeDatabase(); // Wait for DB
