@@ -233,6 +233,16 @@ app.post("/hotels/:hotelId", async (req, res) =>{
 })
 
 const PORT = 5000
-app.listen(PORT, () => {
-    console.log("Server is running on", PORT);
-})
+async function startServer() {
+  try {
+    dbConnected = await initializeDatabase(); // Wait for DB
+
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+  }
+}
+
+startServer();
