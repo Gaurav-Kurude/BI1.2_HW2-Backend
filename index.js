@@ -9,7 +9,7 @@ initializeDatabase();
 const corsOptions = {
   origin: "*",
   credentials: true,
-  optionsSuccessStatus: 200,
+  optionSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
