@@ -4,7 +4,6 @@ const { initializeDatabase } = require("./db/db.connect");
 const app = express();
 const Hotel = require("./models/hotel.models");
 app.use(express.json());
-initializeDatabase();
 
 const corsOptions = {
   origin: "*",
