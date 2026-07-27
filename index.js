@@ -24,8 +24,8 @@ async function createHotel(newHotel){
 }
 
 app.post("/hotels", async (req, res) =>{
+    console.log(req.body);
     try{
-        console.log(req.body);
         const savedHotel = await createHotel(req.body);
         res.status(201).json({message: "hotel added successfully", hotel: savedHotel});
         console.log(savedHotel);
